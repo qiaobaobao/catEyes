@@ -207,25 +207,6 @@ public class Main {
 
 
         // 选择座位
-        /*System.out.print("请输入座位号(如需多个座位请用' ; '分隔): ");
-        String selectedSeats = scanner.next();
-        System.out.println("您选择的座位如下: ");
-        List<Seat> selectSeats = new ArrayList<>();
-        for (String key : selectedSeats.split(";")) {
-            Seat seat = map.get(key);// 获取座位状态
-            if (seat == null) {
-                System.out.println("座位号" + key + "未找到,请检查!");
-                return;
-            }
-            int seatStatus = seat.getSeatStatus();
-            if (seatStatus != 1) {
-                System.out.println("座位号" + key + "已售或不可出售");
-                return;
-            }
-            selectSeats.add(seat);
-        }*/
-
-        // 选择座位
         boolean seatSelected = false;
         List<Seat> selectSeats = new ArrayList<>();
 
