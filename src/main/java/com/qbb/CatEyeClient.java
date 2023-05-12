@@ -22,10 +22,9 @@ import java.util.stream.Collectors;
 public class CatEyeClient {
     public static final COORDINATE COORDINATE = new COORDINATE("34.237752,109.074925");//坐标
     // 浏览器登录猫眼账号后 按照 图 src/main/resources/获取Token&Cookie.png 去照token 和 cookie
-    static final String TOKEN ="AgF4IZ7im0HbzJzQcTREX0owG1Z9PUQl7y0vIO9Vczdo3r2UxYu2W6iTlKPPjrbB2goJTUnlMGDMXgAAAAAtGAAAYkjGXA0g7SUA7SsBPeq5KVbX-Rft_UaBkvQlwSUzK11gpGe0bqR8vZAN9op-JpCX";
-    static final String COOKIE ="_lxsdk_cuid=187faa07ce8c8-0c230aed720ce-7b515477-186a00-187faa07ce8c8; uuid_n_v=v1; iuuid=2A3CFAB0EEC911EDB806BF0DBF1BEE3F5D9DE68AABD44F53B7C6FAF027BE6E1A; WEBDFPID=1683795124463QUGCOYUfd79fef3d01d5e9aadc18ccd4d0c95079325-1683795124463-1683795124463QUGCOYUfd79fef3d01d5e9aadc18ccd4d0c95079325; token=AgF4IZ7im0HbzJzQcTREX0owG1Z9PUQl7y0vIO9Vczdo3r2UxYu2W6iTlKPPjrbB2goJTUnlMGDMXgAAAAAtGAAAYkjGXA0g7SUA7SsBPeq5KVbX-Rft_UaBkvQlwSUzK11gpGe0bqR8vZAN9op-JpCX; token.sig=eM60iR5kP8QQgBr2W8QgiqqxvLc; Hm_lvt_703e94591e87be68cc8da0da7cbd0be2=1683537060,1683810794,1683857667; ci.sig=QEMy3o764q-b9LwWqU5jWd1Dqi0; selectci=true; ci=42%2C%E8%A5%BF%E5%AE%89; ci=42%2C%E8%A5%BF%E5%AE%89; ci=42%2C%E8%A5%BF%E5%AE%89; selectci=true; selectci.sig=kdh2HVdzxNAXQp-kYQgChk2a2rw; _lx_utm=utm_source%3Dbing%26utm_medium%3Dorganic; _lxsdk=2FD63E40ED8011EDA656FD7ECF47D22989343B868DBB457CB728F1C88455E37B; _lxsdk_s=188105d3b21-960-aae-38e%7C%7C2; featrues=[object Object]; featrues.sig=KbQquuOrr42L3kMHbtKc319ems8; uid=3003032441; user=3003032441%2CAgF4IZ7im0HbzJzQcTREX0owG1Z9PUQl7y0vIO9Vczdo3r2UxYu2W6iTlKPPjrbB2goJTUnlMGDMXgAAAAAtGAAAYkjGXA0g7SUA7SsBPeq5KVbX-Rft_UaBkvQlwSUzK11gpGe0bqR8vZAN9op-JpCX";
-    /*static final String TOKEN ="";
-    static final String COOKIE ="";*/
+
+    static final String TOKEN ="";
+    static final String COOKIE ="";
     public static final HTTP http = HTTP.builder()
             .addMsgConvertor(new FastjsonMsgConvertor())
             .addPreprocessor((Preprocessor.PreChain chain) -> {
