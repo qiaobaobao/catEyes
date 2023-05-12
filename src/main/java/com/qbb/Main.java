@@ -165,7 +165,7 @@ public class Main {
 
         // 输出座位信息
         SeatRegion seats = chosenShow.getSeats();
-        System.out.println(JSONObject.toJSONString(seats));
+       /* System.out.println(JSONObject.toJSONString(seats));*/
         System.out.println("座位图如下: ");
 
         // 添加顶部横线
@@ -173,7 +173,7 @@ public class Main {
         String horizontalLine = StringUtils.repeat("-", lineWidth);
         System.out.println(horizontalLine);
 
-        System.out.println(seats.getRegionName() + " \t □未售 \t ■已售 \t ▧不可售");
+        System.out.println(seats.getRegionName() + " \t □未售 \t ■已售 \t ▧不可售 \t [□\t\t□]情侣座位");
         HashMap<String, Seat> map = new HashMap<>();
         for (Row row : seats.getRows()) {
             for (Seat seat : row.getSeats()) {
@@ -211,12 +211,18 @@ public class Main {
         List<Seat> selectSeats = new ArrayList<>();
 
         while (!seatSelected) {
-            System.out.print("请输入座位号(如需多个座位请用' ; '分隔): ");
+            System.out.print("请输入座位号(如需多个(一次最多6个)座位请用' ; '分隔): ");
             String selectedSeats = scanner.next();
             System.out.println("您选择的座位如下: ");
             selectSeats.clear(); // 清空上次选择的座位
 
-            for (String key : selectedSeats.split(";")) {
+            String[] seatNumbers = selectedSeats.split(";");
+            if (seatNumbers.length > 6) {
+                System.out.println("最多只能选择6个座位，请重新输入。");
+                continue;
+            }
+
+            for (String key : seatNumbers) {
                 Seat seat = map.get(key);// 获取座位状态
                 if (seat == null) {
                     System.out.println("座位号" + key + "未找到,请检查!");
